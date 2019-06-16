@@ -134,5 +134,5 @@ async def on_message(message):
                     embed.set_footer(text="CN Project Bot : CN Guild Bot | 똥개")
                     await client.send_message(message.channel, embed=embed)
 
-    
-client.run('NTQ3NDEzOTcxMjAwOTAxMTIw.XOI5Wg.1pKHZRbctSJ8SRrpYCxwna5ASxA')    
+access.token = os.environ["BOT_TOKEN"]    
+client.run(access_token)    
