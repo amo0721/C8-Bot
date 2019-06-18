@@ -1,4 +1,4 @@
-import asyncio, discord, setting, os, sys, random, datetime
+import asyncio, discord, setting, os, datetime
 
 client = discord.Client()
 Setting = setting.Settings()
@@ -15,7 +15,7 @@ async def on_ready():
 async def on_message(message):
                 if message.author.id == Setting.ban_user_id:
                     await client.send_message(message.channel, "당신은 봇관리자에 의해 차단된 유저입니다! \n 문의는 봇관리자 개인메세지로 주세요.\n Jenon{Xenon} 제논 [Melon™]")
-                    await client.send_message(client.get_channel(Setting.err_loging_channel), "차단된 유저가 명령어 사용을 시도하였습니다.\n유저 이름 : %d\n유저 아이디 : %d\n사용 서버 : %d\nCN Bot Logger")
+                    await client.send_message(client.get_channel(Setting.err_loging_channel), "차단된 유저가 명령어 사용을 시도하였습니다.\n유저 이름 : (message.author.name)\n유저 아이디 : (message.author.id)\n사용 서버 : (message.server.name)\nCN Bot Logger")
                 
                 if message.content.startswith('/게임'):
                     if message.author.server_permissions.administrator:
@@ -71,7 +71,7 @@ async def on_message(message):
                 
                 if message.content.startswith("/길드정보"):
                     embed=discord.Embed(title="CN 길드정보", description=None, color=0x00ff00)
-                    embed.add_field(name="CNN 길드는 하이픽셀 배드워즈 길드입니다.", value="CN 길드는 한국 배드워즈 랭킹 2위를 목표로 삼고있는 길드입니다.", inline=True)
+                    embed.add_field(name="CN길드는 하이픽셀 배드워즈 길드입니다.", value="CN 길드는 한국 배드워즈 랭킹 2위를 목표로 삼고있는 길드입니다.", inline=True)
                     embed.add_field(name="길드장 : _C*", value="길드 가입 많이많이 해주세요!")
                     await client.send_message(message.channel, embed=embed)
 
@@ -102,26 +102,11 @@ async def on_message(message):
                     embed.set_thumbnail(url=message.server.icon_url)
                     await client.send_message(message.channel, embed=embed)
 
-                if message.content.startswith("/추방"):
-                    if message.author.server_permissions.administrator:
-                        learn = message.content.split(' ')
-                        member = discord.utils.get(client.get_all_members(),id=learn[1])
-                        await client.kick(member)
-                        await client.send_message(message.channel, "추방 완료!")
-        
-                if message.content.startswith("/벤"):
-                    if message.author.server_permissions.administrator:
-                        learn = message.content.split(' ')
-                        member = discord.utils.get(client.get_all_members(),id=learn[1])
-                        await client.ban(member, 1)
-                        await client.send_message(message.channel, "추방 완료!")
-
                 if message.content.startswith('/기능 종료 메인'):
                     embed = discord.Embed(title="메인 모듈 종료", color=0xff0000)
                     embed.add_field(name="메인 모듈 종료", value="요청자 : " + str(message.author.name))
                     await client.send_message(client.get_channel(Setting.err_loging_channel), embed=embed)
                     quit()
-                    await client.login
 
                 if message.content.startswith('/관리자 소개'):
                     embed = discord.Embed(title="CN의 관리자들을 소개합니다!", color=0xff0000)
