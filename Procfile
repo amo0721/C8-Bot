@@ -1,1 +1,1 @@
-worker: python afk.py
+worker: python afk.py,notice.py
