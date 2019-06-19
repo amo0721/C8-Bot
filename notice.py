@@ -159,38 +159,32 @@ async def on_message(message):
                     learn = message.content.replace('/잠수', "")
                     a = datetime.datetime.today().year
                     b = datetime.datetime.today().month
-        c = datetime.datetime.today().day
-        d = datetime.datetime.today().hour
-        e = datetime.datetime.today().minute
-        afk.append(id)
-        if learn == '':
-            embed = discord.Embed(title="잠수 시작!", color=0x00ff00)
-            embed.add_field(name=(message.author.name) + "님의 잠수 상태가 시작되었습니다!!!", value="잠수 시작 시간 : " + str(a) + "년" + str(b) + "월" + str(c) + "일" + str(d) + "시" + str(e) + "분")
-            await app.send_message(message.channel, embed=embed)
-        else:
-            embed = discord.Embed(title="잠수 시작!", color=0x00ff00)
-            embed.add_field(name=(message.author.name) + "님의 잠수 상태가 시작되었습니다!!!", value="잠수 시작 시간 : " + str(a) + "년" + str(b) + "월" + str(c) + "일" + str(d) + "시" + str(e) + "분")
-            embed.add_field(name="사유", value=learn)
-            await app.send_message(message.channel, embed=embed)
-
-    if message.content.startswith('/기능 종료 잠수'):
-        embed = discord.Embed(title="잠수 모듈 종료", color=0xff0000)
-        embed.add_field(name="잠수 모듈 종료", value="요청자 : " + str(message.author.name))
-        await app.send_message(client.get_channel(Setting.err_loging_channel), embed=embed)
-        quit()
+                    c = datetime.datetime.today().day
+                    d = datetime.datetime.today().hour
+                    e = datetime.datetime.today().minute
+                    afk.append(id)
+                    if learn == '':
+                        embed = discord.Embed(title="잠수 시작!", color=0x00ff00)
+                        embed.add_field(name=(message.author.name) + "님의 잠수 상태가 시작되었습니다!!!", value="잠수 시작 시간 : " + str(a) + "년" + str(b) + "월" + str(c) + "일" + str(d) + "시" + str(e) + "분")
+                        await app.send_message(message.channel, embed=embed)
+                     else:
+                        embed = discord.Embed(title="잠수 시작!", color=0x00ff00)
+                        embed.add_field(name=(message.author.name) + "님의 잠수 상태가 시작되었습니다!!!", value="잠수 시작 시간 : " + str(a) + "년" + str(b) + "월" + str(c) + "일" + str(d) + "시" + str(e) + "분")
+                        embed.add_field(name="사유", value=learn)
+                        await app.send_message(message.channel, embed=embed)
         
-    if "/" in message.content:
-        a = datetime.datetime.today().year
-        b = datetime.datetime.today().month
-        c = datetime.datetime.today().day
-        d = datetime.datetime.today().hour
-        e = datetime.datetime.today().minute
-        f = datetime.datetime.today().second
-        embed=discord.Embed(title="CN Bot Command log", description=str(message.author.name), color=0x0000ff)
-        embed.add_field(name="메세지 내용", value=(message.content))
-        embed.add_field(name="메세지 채널", value="<#" + str(message.channel.id) + ">")
-        embed.set_footer(text=str(a) + "년 " + str(b) + "월 " + str(c) + "일 " + str(d) + "시 " + str(e) + "분 " + str(f) + "초에 발신됨.")
-        await app.send_message(app.get_channel(Setting.err_loging_channel), embed=embed)
+                if "/" in message.content:
+                    a = datetime.datetime.today().year
+                    b = datetime.datetime.today().month
+                    c = datetime.datetime.today().day
+                    d = datetime.datetime.today().hour
+                    e = datetime.datetime.today().minute
+                    f = datetime.datetime.today().second
+                    embed=discord.Embed(title="CN Bot Command log", description=str(message.author.name), color=0x0000ff)
+                    embed.add_field(name="메세지 내용", value=(message.content))
+                    embed.add_field(name="메세지 채널", value="<#" + str(message.channel.id) + ">")
+                    embed.set_footer(text=str(a) + "년 " + str(b) + "월 " + str(c) + "일 " + str(d) + "시 " + str(e) + "분 " + str(f) + "초에 발신됨.")
+                    await app.send_message(app.get_channel(Setting.err_loging_channel), embed=embed)
 
 
 app.run("NTQ3NDEzOTcxMjAwOTAxMTIw.XQiZWw.Kk_BViCE7jqz0aOOQv6Dv3EGAho")
