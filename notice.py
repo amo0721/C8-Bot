@@ -167,7 +167,7 @@ async def on_message(message):
                         embed = discord.Embed(title="잠수 시작!", color=0x00ff00)
                         embed.add_field(name=(message.author.name) + "님의 잠수 상태가 시작되었습니다!!!", value="잠수 시작 시간 : " + str(a) + "년" + str(b) + "월" + str(c) + "일" + str(d) + "시" + str(e) + "분")
                         await app.send_message(message.channel, embed=embed)
-                     else:
+                    else:
                         embed = discord.Embed(title="잠수 시작!", color=0x00ff00)
                         embed.add_field(name=(message.author.name) + "님의 잠수 상태가 시작되었습니다!!!", value="잠수 시작 시간 : " + str(a) + "년" + str(b) + "월" + str(c) + "일" + str(d) + "시" + str(e) + "분")
                         embed.add_field(name="사유", value=learn)
