@@ -156,9 +156,9 @@ async def on_message(message):
                         await app.send_message(message.channel, "완료!")
   
                 if message.content.startswith('/잠수'):
-        learn = message.content.replace('/잠수', "")
-        a = datetime.datetime.today().year
-        b = datetime.datetime.today().month
+                    learn = message.content.replace('/잠수', "")
+                    a = datetime.datetime.today().year
+                    b = datetime.datetime.today().month
         c = datetime.datetime.today().day
         d = datetime.datetime.today().hour
         e = datetime.datetime.today().minute
