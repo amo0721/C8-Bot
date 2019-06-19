@@ -40,16 +40,16 @@ async def on_message(message):
                     if message.author.server_permissions.administrator:
                         learn = message.content.replace('/게임', "")
                         await client.change_presence(game=discord.Game(name=learn))
-                        await client.send_message(message.channel, "봇의 게임을 변경하였습니다.")
+                        await app.send_message(message.channel, "봇의 게임을 변경하였습니다.")
 
                 if message.content.startswith("/온라인"):
                     embed=discord.Embed(title="CN BOT 온라인 상황", description=None, color=0x00ff00)
                     embed.add_field(name="I'm online!", value="이 메세지가 발신되지 않으면 Offline 입니다.")
                     embed.add_field(name="요청자", value="<@" + str(message.author.name) + ">")
-                    await client.send_message(message.channel, embed=embed)  
+                    await app.send_message(message.channel, embed=embed)  
                 
                 if message.content.startswith("/초대"):
-                    await client.send_message(message.channel, str(message.author.name)+" 죄송합니다.이 봇은 CN 전용 봇으로 초대할 수 없습니다.")
+                    await app.send_message(message.channel, str(message.author.name)+" 죄송합니다.이 봇은 CN 전용 봇으로 초대할 수 없습니다.")
 
                 if message.content.startswith("/상태"):
                     if message.author.id == Setting.owner_id:
@@ -59,7 +59,7 @@ async def on_message(message):
                         embed.add_field(name="Bot Notice Channel", value=Setting.notice_channel, inline=True)
                         embed.add_field(name="Welcome Channel", value=Setting.welcome_channel, inline=True)
                         embed.add_field(name="Ban User id", value=Setting.ban_user_id, inline=True)
-                        await client.send_message(message.channel, embed=embed)
+                        await app.send_message(message.channel, embed=embed)
                
                 if message.content.startswith('/도움말'):
                     a = datetime.datetime.today().year
@@ -71,28 +71,27 @@ async def on_message(message):
                     embed=discord.Embed(title='`CN Bot 도움말 목록`', description=None, color=0xb2ebf4)
                     embed.add_field(name='`/온라인`', value='봇이 온라인인지 확인할 수 있습니다.', inline=False)
                     embed.add_field(name='`/도움말`', value='CN Bot 도움말을 출력합니다.', inline=False)
-                    embed.add_field(name='`/초대`', value='CN Bot 초대링크를 출력하나, 이 봇은 BN 전용 봇으로 쓸모없는 커맨드((퍽퍽', inline=False)
+                    embed.add_field(name='`/초대`', value='CN Bot 초대링크를 출력하나, 이 봇은 서버 전용 봇으로 쓸모없는 커맨드((퍽퍽', inline=False)
                     embed.add_field(name='`/길드정보`', value='CN 길드정보를 출력합니다.', inline=False)
                     embed.add_field(name='`/규칙`', value="CN 서버 규칙을 출력합니다.", inline=False)
                     embed.add_field(name='`/서버정보`', value="서버 정보를 출력합니다.", inline=False)
                     embed.add_field(name='`/잠수`', value="잠수 상태에 돌입합니다.", inline=False)
-                    embed.add_field(name='`인증`', value='처음 온 유저에게 인증이 필요합니다.그 인증 절차를 위한 명령어입니다.자동화는 추후 업데이트로 활성화시키겠습니다.', inline=False)
                     embed.add_field(name='`/관리자 소개`', value="CN Server | Guild의 관리자들을 소개합니다!!!(봉사위원 제외)")
                     embed.set_footer(text="관리자 명령어는 '/관리자 도움말' 입력! | " + str(a) + "년 " + str(b) + "월 " + str(c) + "일 " + str(d) + "시 " + str(e) + "분 " + str(f) + "초")
-                    await client.send_message(message.channel, embed=embed)
+                    await app.send_message(message.channel, embed=embed)
 
                 if message.content.startswith('/관리자 도움말'):
                     embed=discord.Embed(title='`CN Bot 관리자 도움말 목록`', color=0x00ff00)
                     embed.add_field(name='/공지 [공지 분류] [내용]', value="공지 채널에 내용을 공지로 전송합니다.공지 분류는 긴급 패치 | 업데이트 | 일반 이 있습니다.")
                     embed.add_field(name='/기능 종료 [모듈이름]', value='해당 모듈을 종료합니다. 모듈에는 메인, 잠수, 공지, 로그 가 있습니다.')
                     embed.add_field(name='/게임 [게임내용]', value='플레이중 상태를 [게임내용]으로 변경합니다.')
-                    await client.send_message(message.channel, embed=embed)
+                    await app.send_message(message.channel, embed=embed)
                 
                 if message.content.startswith("/길드정보"):
                     embed=discord.Embed(title="CN 길드정보", description=None, color=0x00ff00)
                     embed.add_field(name="CN길드는 하이픽셀 배드워즈 길드입니다.", value="CN 길드는 한국 배드워즈 랭킹 2위를 목표로 삼고있는 길드입니다.", inline=True)
                     embed.add_field(name="길드장 : _C*", value="길드 가입 많이많이 해주세요!")
-                    await client.send_message(message.channel, embed=embed)
+                    await app.send_message(message.channel, embed=embed)
 
                 if message.content.startswith("/규칙"):
                     embed=discord.Embed(title="CN Guild Community 규칙입니다.본 사항을 지켜주세요.", color=0x00ff00)
@@ -109,7 +108,7 @@ async def on_message(message):
                     embed.add_field(name="11. 각 채널에서 목적에 맞지 않는 텍스트는 입력하지 말아주세요.", value="Ex)장난으로 질문답변방에 게임과 관련없는 질문을 한다.")
                     embed.add_field(name="12. 홍보 연속 3회 이상은 금지해 주세요!경고 1회 제재 처리합니다.", value="홍보는 홍보 채널에서만 가능하며 이외의 채널에서 디스코드 서버 초대가 보일 경우 즉시 추방하겠습니다.")
                     embed.add_field(name="기타로 서버에 해가 되는 행동은 처벌되며 경고 7회 누적시 30일 벤이라는 것을 명심해 주시기 바랍니다.", value="규칙은 계속 변경될 수 있습니다.")
-                    await client.send_message(message.channel, embed=embed)
+                    await app.send_message(message.channel, embed=embed)
 
                 if message.content.startswith("/서버정보"):
                     embed = discord.Embed(title="\"%s\" 서버정보!" % (message.server.name), description=None, color=0X00ff00)
@@ -119,12 +118,12 @@ async def on_message(message):
                     embed.add_field(name="서버 위치", value=message.server.region, inline=False)
                     embed.add_field(name="서버 잠수채널", value="%s (%s분 이상 잠수이면 이동됨)" % (message.server.afk_channel, message.server.afk_timeout/60), inline=False)
                     embed.set_thumbnail(url=message.server.icon_url)
-                    await client.send_message(message.channel, embed=embed)
+                    await app.send_message(message.channel, embed=embed)
 
                 if message.content.startswith('/기능 종료 메인'):
                     embed = discord.Embed(title="메인 모듈 종료", color=0xff0000)
                     embed.add_field(name="메인 모듈 종료", value="요청자 : " + str(message.author.name))
-                    await client.send_message(client.get_channel(Setting.err_loging_channel), embed=embed)
+                    await app.send_message(client.get_channel(Setting.err_loging_channel), embed=embed)
                     quit()
 
                 if message.content.startswith('/관리자 소개'):
@@ -136,7 +135,7 @@ async def on_message(message):
                     embed.add_field(name="네온(InNeon)", value="부반장")
                     embed.add_field(name="블루베어", value="부반장")
                     embed.set_footer(text="CN Project Bot : CN Guild Bot | 똥개")
-                    await client.send_message(message.channel, embed=embed)
+                    await app.send_message(message.channel, embed=embed)
 
     
                 if message.content.startswith("/공지"):
