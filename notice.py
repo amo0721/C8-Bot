@@ -100,7 +100,4 @@ async def on_message(message):
         await app.send_message(client.get_channel(Setting.err_loging_channel), embed=embed)
         quit()
 
-                        
-
-access_token = os.environ["BOT_TOEKN"]
-app.run(access_token)
+app.run("NTQ3NDEzOTcxMjAwOTAxMTIw.XQiZWw.Kk_BViCE7jqz0aOOQv6Dv3EGAho")
