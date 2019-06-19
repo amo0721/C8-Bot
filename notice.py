@@ -2,6 +2,7 @@ import discord, asyncio, os, sys, setting, datetime
 
 app = discord.Client()
 Setting = setting.Settings()
+afk = []
 
 @app.event
 async def on_ready():
