@@ -1,1 +1,1 @@
-worker: python CN_Guilld_Bot.py
+worker: python notice.py
