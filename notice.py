@@ -155,7 +155,7 @@ async def on_message(message):
                         await app.send_message(app.get_channel(Setting.notice_channel), embed=embed)
                         await app.send_message(message.channel, "완료!")
   
-    if message.content.startswith('/잠수'):
+                if message.content.startswith('/잠수'):
         learn = message.content.replace('/잠수', "")
         a = datetime.datetime.today().year
         b = datetime.datetime.today().month
