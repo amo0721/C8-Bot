@@ -39,7 +39,7 @@ async def on_message(message):
                 if message.content.startswith('/게임'):
                     if message.author.server_permissions.administrator:
                         learn = message.content.replace('/게임', "")
-                        await client.change_presence(game=discord.Game(name=learn))
+                        await app.change_presence(game=discord.Game(name=learn))
                         await app.send_message(message.channel, "봇의 게임을 변경하였습니다.")
 
                 if message.content.startswith("/온라인"):
