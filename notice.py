@@ -120,7 +120,7 @@ async def on_message(message):
                     embed.set_thumbnail(url=message.server.icon_url)
                     await app.send_message(message.channel, embed=embed)
 
-                if message.content.startswith('/기능 종료 메인'):
+                if message.content.startswith('/종료'):
                     embed = discord.Embed(title="메인 모듈 종료", color=0xff0000)
                     embed.add_field(name="메인 모듈 종료", value="요청자 : " + str(message.author.name))
                     await app.send_message(client.get_channel(Setting.err_loging_channel), embed=embed)
