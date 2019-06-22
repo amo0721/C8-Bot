@@ -34,7 +34,7 @@ import datetime
 
 class Settings:
     def __init__(self):
-        self.owner_id = "467625748631519244"
+        self.owner_id = "550876882246303774"
         self.log_file = "msg_log.rtl"
         self.actvity_log_file = "actvity_log.rtl"
         self.err_loging_channel = "577119036832481280"
