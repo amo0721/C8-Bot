@@ -39,6 +39,6 @@ class Settings:
         self.actvity_log_file = "actvity_log.rtl"
         self.err_loging_channel = "577119036832481280"
         self.bot_id = "547413971200901120", "415401437246521344", "387548561816027138", "484395597508509697"
-        self.notice_channel = "576600459771641994"
+        self.notice_channel = "591961466794409996"
         self.welcome_channel = "576592307978108929"
         self.ban_user_id = "457537955188178955", "467625748631519244"
