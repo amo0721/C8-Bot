@@ -82,32 +82,16 @@ async def on_message(message):
 
                 if message.content.startswith('/관리자 도움말'):
                     embed=discord.Embed(title='`CN Bot 관리자 도움말 목록`', color=0x00ff00)
-                    embed.add_field(name='/공지 [공지 분류] [내용]', value="공지 채널에 내용을 공지로 전송합니다.공지 분류는 긴급 패치 | 업데이트 | 일반 이 있습니다.")
-                    embed.add_field(name='/기능 종료 [모듈이름]', value='해당 모듈을 종료합니다. 모듈에는 메인, 잠수, 공지, 로그 가 있습니다.')
+                    embed.add_field(name='/공지 [내용]', value="공지 채널에 내용을 공지로 전송합니다.")
+                    embed.add_field(name='/종료', value='봇을 종료합니다.')
                     embed.add_field(name='/게임 [게임내용]', value='플레이중 상태를 [게임내용]으로 변경합니다.')
+                    embed.add_field(name='/상태', value='Setting.py 및 서버 상태를 알려줍니다.')
                     await app.send_message(message.channel, embed=embed)
                 
                 if message.content.startswith("/길드정보"):
                     embed=discord.Embed(title="CN 길드정보", description=None, color=0x00ff00)
                     embed.add_field(name="CN길드는 하이픽셀 배드워즈 길드입니다.", value="CN 길드는 한국 배드워즈 랭킹 2위를 목표로 삼고있는 길드입니다.", inline=True)
                     embed.add_field(name="길드장 : _C*", value="길드 가입 많이많이 해주세요!")
-                    await app.send_message(message.channel, embed=embed)
-
-                if message.content.startswith("/규칙"):
-                    embed=discord.Embed(title="CN Guild Community 규칙입니다.본 사항을 지켜주세요.", color=0x00ff00)
-                    embed.add_field(name="1. 욕설 및 분쟁 유발, 저속한 단어들, 성드립&패드립 사용 금지", value="1-1. 상대방이 기분이 나쁘다고 판단할 정도가 기준입니다.")
-                    embed.add_field(name="2. 명령어는 명령어 채널에서만 입력해 주세요.", value="모든 명령어는 <#576600326044647443>에서 입력해 주셔야 합니다.")
-                    embed.add_field(name="3. 도배 금지-뮤트 5일[심하면 벤]", value="3-1. 할말이 있어서 장문을 입력하는 것이 아니면 10줄 이상 입력할 시 도배로 간주합니다.")
-                    embed.add_field(name="4. 하이픽셀의 모든 규칙을 준수할 것", value="4-1. 핵, 욕설, 도배\n4-2. 핵인 것이 증명될 경우 벤처리 합니다.")
-                    embed.add_field(name="5. 길드원은 길드 규칙을 준수할 것", value="<#576600589648003092>")
-                    embed.add_field(name="6. 특정인 비하 혹은 언급 금지", value="이 경우 킥입니다.")
-                    embed.add_field(name="7. 관리자 혹은 역할 구걸 금지", value="단, 역할 신청은 제외되며 타 채널 혹은 관리자 개인메세지로 관리자 역할 이상의 역할을 구걸할 경우 추방 제재를 가합니다.")
-                    embed.add_field(name="8. 통화방에서 욕설, 혹은 성드립&패드립 비하 등등 금지", value="통화방에 2인 이상의 사람이 있을 경우 적용되는 규칙입니다.")
-                    embed.add_field(name="9. Everyone 멘션 금지", value="모두에게 멘션이 가는 행동은 금지합니다.")
-                    embed.add_field(name="10. 이 서버에서 계정판매 혹은 거래는 불가능합니다.", value="만약 구입자가 있을 경우 구입자까지 추방합니다.")
-                    embed.add_field(name="11. 각 채널에서 목적에 맞지 않는 텍스트는 입력하지 말아주세요.", value="Ex)장난으로 질문답변방에 게임과 관련없는 질문을 한다.")
-                    embed.add_field(name="12. 홍보 연속 3회 이상은 금지해 주세요!경고 1회 제재 처리합니다.", value="홍보는 홍보 채널에서만 가능하며 이외의 채널에서 디스코드 서버 초대가 보일 경우 즉시 추방하겠습니다.")
-                    embed.add_field(name="기타로 서버에 해가 되는 행동은 처벌되며 경고 7회 누적시 30일 벤이라는 것을 명심해 주시기 바랍니다.", value="규칙은 계속 변경될 수 있습니다.")
                     await app.send_message(message.channel, embed=embed)
 
                 if message.content.startswith("/서버정보"):
