@@ -170,4 +170,4 @@ async def on_message(message):
                     await app.send_message(app.get_channel(Setting.err_loging_channel), embed=embed)
 
 access_token = os.environ["BOT_TOKEN"]
-app.run(BOT_TOKEN)
+app.run(access_token)
