@@ -169,5 +169,5 @@ async def on_message(message):
                     embed.set_footer(text=str(a) + "년 " + str(b) + "월 " + str(c) + "일 " + str(d) + "시 " + str(e) + "분 " + str(f) + "초에 발신됨.")
                     await app.send_message(app.get_channel(Setting.err_loging_channel), embed=embed)
 
-
-app.run("NTQ3NDEzOTcxMjAwOTAxMTIw.XQiZWw.Kk_BViCE7jqz0aOOQv6Dv3EGAho")
+access_token = os.environ["BOT_TOKEN"]
+app.run(BOT_TOKEN)
