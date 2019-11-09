@@ -43,17 +43,17 @@ async def on_message(message):
                         await app.send_message(message.channel, "봇의 게임을 변경하였습니다.")
 
                 if message.content.startswith("/온라인"):
-                    embed=discord.Embed(title="CN BOT 온라인 상황", description=None, color=0x00ff00)
+                    embed=discord.Embed(title="Jenon BOT 온라인 상황", description=None, color=0x00ff00)
                     embed.add_field(name="I'm online!", value="이 메세지가 발신되지 않으면 Offline 입니다.")
                     embed.add_field(name="요청자", value="<@" + str(message.author.name) + ">")
                     await app.send_message(message.channel, embed=embed)  
                 
                 if message.content.startswith("/초대"):
-                    await app.send_message(message.channel, str(message.author.name)+" 죄송합니다.이 봇은 CN 전용 봇으로 초대할 수 없습니다.")
+                    await app.send_message(message.channel, str(message.author.name)+" 죄송합니다.이 봇은 본 서버 전용 봇으로 초대할 수 없습니다.")
 
                 if message.content.startswith("/상태"):
                     if message.author.id == Setting.owner_id:
-                        embed = discord.Embed(title="CN Bot 서버 상태", color=0x00ff00)
+                        embed = discord.Embed(title="Jenon Bot 서버 상태", color=0x00ff00)
                         embed.add_field(name="Owner id", value=Setting.owner_id, inline=True)
                         embed.add_field(name="classic log channel id", value=Setting.err_loging_channel, inline=True)
                         embed.add_field(name="Bot Notice Channel", value=Setting.notice_channel, inline=True)
@@ -68,30 +68,23 @@ async def on_message(message):
                     d = datetime.datetime.today().hour
                     e = datetime.datetime.today().minute
                     f = datetime.datetime.today().second
-                    embed=discord.Embed(title='`CN Bot 도움말 목록`', description=None, color=0xb2ebf4)
+                    embed=discord.Embed(title='`Jenon Bot 도움말 목록`', description=None, color=0xb2ebf4)
                     embed.add_field(name='`/온라인`', value='봇이 온라인인지 확인할 수 있습니다.', inline=False)
-                    embed.add_field(name='`/도움말`', value='CN Bot 도움말을 출력합니다.', inline=False)
-                    embed.add_field(name='`/초대`', value='CN Bot 초대링크를 출력하나, 이 봇은 서버 전용 봇으로 쓸모없는 커맨드((퍽퍽', inline=False)
-                    embed.add_field(name='`/길드정보`', value='CN 길드정보를 출력합니다.', inline=False)
-                    embed.add_field(name='`/규칙`', value="CN 서버 규칙을 출력합니다.", inline=False)
+                    embed.add_field(name='`/도움말`', value='Jenon Bot 도움말을 출력합니다.', inline=False)
+                    embed.add_field(name='`/초대`', value='Jenon Bot 초대링크를 출력하나, 이 봇은 서버 전용 봇으로 쓸모없는 커맨드((퍽퍽', inline=False)
+                    embed.add_field(name='`/규칙`', value="본 서버 규칙을 출력합니다.", inline=False)
                     embed.add_field(name='`/서버정보`', value="서버 정보를 출력합니다.", inline=False)
                     embed.add_field(name='`/잠수`', value="잠수 상태에 돌입합니다.", inline=False)
-                    embed.add_field(name='`/관리자 소개`', value="CN Server | Guild의 관리자들을 소개합니다!!!(봉사위원 제외)")
+                    embed.add_field(name='`/관리자 소개`', value="OverWatch discord Server | 서버 관리자들을 소개합니다!!!")
                     embed.set_footer(text="관리자 명령어는 '/관리자 도움말' 입력! | " + str(a) + "년 " + str(b) + "월 " + str(c) + "일 " + str(d) + "시 " + str(e) + "분 " + str(f) + "초")
                     await app.send_message(message.channel, embed=embed)
 
                 if message.content.startswith('/관리자 도움말'):
-                    embed=discord.Embed(title='`CN Bot 관리자 도움말 목록`', color=0x00ff00)
+                    embed=discord.Embed(title='`Jenon Bot 관리자 도움말 목록`', color=0x00ff00)
                     embed.add_field(name='/공지 [내용]', value="공지 채널에 내용을 공지로 전송합니다.")
                     embed.add_field(name='/종료', value='봇을 종료합니다.')
                     embed.add_field(name='/게임 [게임내용]', value='플레이중 상태를 [게임내용]으로 변경합니다.')
                     embed.add_field(name='/상태', value='Setting.py 및 서버 상태를 알려줍니다.')
-                    await app.send_message(message.channel, embed=embed)
-                
-                if message.content.startswith("/길드정보"):
-                    embed=discord.Embed(title="CN 길드정보", description=None, color=0x00ff00)
-                    embed.add_field(name="CN길드는 하이픽셀 배드워즈 길드입니다.", value="CN 길드는 한국 배드워즈 랭킹 2위를 목표로 삼고있는 길드입니다.", inline=True)
-                    embed.add_field(name="길드장 : _C*", value="길드 가입 많이많이 해주세요!")
                     await app.send_message(message.channel, embed=embed)
 
                 if message.content.startswith("/서버정보"):
@@ -111,14 +104,10 @@ async def on_message(message):
                     quit()
 
                 if message.content.startswith('/관리자 소개'):
-                    embed = discord.Embed(title="CN의 관리자들을 소개합니다!", color=0xff0000)
-                    embed.add_field(name="_C*", value="학급 회장")
-                    embed.add_field(name="김비서 Rick_Moo", value="반장")
-                    embed.add_field(name="내 밑 댕청 김비서 (Gambeul)", value="반장")
-                    embed.add_field(name="Jenon C (제논) [Melon™] & Jenon P (제논) [Melon™]", value="부반장")
-                    embed.add_field(name="네온(InNeon)", value="부반장")
-                    embed.add_field(name="블루베어", value="부반장")
-                    embed.set_footer(text="CN Project Bot : CN Guild Bot | 똥개")
+                    embed = discord.Embed(title="OverWatch discord의 관리자들을 소개합니다!", color=0xff0000)
+                    embed.add_field(name="아루의 즐거운게임 천국", value="서버 주인(Server Owner)")
+                    embed.add_field(name="Jenon", value="서버 관리자/봇 관리자(Server Adminstor/Bot manager)")
+                    embed.set_footer(text="Project Bot : Jenon Bot")
                     await app.send_message(message.channel, embed=embed)
 
     
@@ -163,12 +152,12 @@ async def on_message(message):
                     d = datetime.datetime.today().hour
                     e = datetime.datetime.today().minute
                     f = datetime.datetime.today().second
-                    embed=discord.Embed(title="CN Bot Command log", description=str(message.author.name), color=0x0000ff)
+                    embed=discord.Embed(title="Jenon Bot Command log", description=str(message.author.name), color=0x0000ff)
                     embed.add_field(name="메세지 내용", value=(message.content))
                     embed.add_field(name="메세지 채널", value="<#" + str(message.channel.id) + ">")
                     embed.set_footer(text=str(a) + "년 " + str(b) + "월 " + str(c) + "일 " + str(d) + "시 " + str(e) + "분 " + str(f) + "초에 발신됨.")
                     await app.send_message(app.get_channel(Setting.err_loging_channel), embed=embed)
-                    print("C8 Bot Command Use Log\n발신자:" + str(message.author.name) + "\n발신 서버 : " + str(message.server.name) + "\n내용 : " + str(message.content) % ())
+                    print("Jenon Bot Command Use Log\n발신자:" + str(message.author.name) + "\n발신 서버 : " + str(message.server.name) + "\n내용 : " + str(message.content) % ())
 
 access_token = os.environ["BOT_TOKEN"]
 app.run(access_token)
