@@ -1,2 +1,2 @@
-# C8-Bot
-C8 Guild의 전용 봇입니다!
+# Jenon Bot
+내 전용 봇이다 이말입니다
