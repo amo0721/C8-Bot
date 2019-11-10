@@ -6,7 +6,7 @@ afk = []
 
 @app.event
 async def on_ready():
-    print("공지 기능 활성화." % ())
+    print("login" % ())
     
 @app.event
 async def on_member_join(member):
@@ -74,7 +74,7 @@ async def on_message(message):
                     embed.add_field(name='`/초대`', value='Jenon Bot 초대링크를 출력하나, 이 봇은 서버 전용 봇으로 쓸모없는 커맨드((퍽퍽', inline=False)
                     embed.add_field(name='`/규칙`', value="본 서버 규칙을 출력합니다.", inline=False)
                     embed.add_field(name='`/서버정보`', value="서버 정보를 출력합니다.", inline=False)
-                    embed.add_field(name='`/잠수`', value="잠수 상태에 돌입합니다.", inline=False)
+                    embed.add_field(name='`/잠수 [사유]`', value="잠수 상태에 돌입합니다. 사유도 넣을 수 있습니다.", inline=False)
                     embed.add_field(name='`/관리자 소개`', value="OverWatch discord Server | 서버 관리자들을 소개합니다!!!")
                     embed.set_footer(text="관리자 명령어는 '/관리자 도움말' 입력! | " + str(a) + "년 " + str(b) + "월 " + str(c) + "일 " + str(d) + "시 " + str(e) + "분 " + str(f) + "초")
                     await app.send_message(message.channel, embed=embed)
@@ -122,7 +122,7 @@ async def on_message(message):
                         f = datetime.datetime.today().second
                         g = message.author.name
                         embed = discord.Embed(title=str(g) + "님의 공지", color=0x00ff00)
-                        embed.add_field(name=learn, value="Module by Mary")
+                        embed.add_field(name=learn, value="관리자 권한 : 인증✅")
                         embed.set_footer(text=str(a) + "년 " + str(b) + "월 " + str(c) + "일 " + str(d) + "시 " + str(e) + "분 " + str(f) + "초 | 발신자 : " + str(message.author.name))
                         await app.send_message(app.get_channel(Setting.notice_channel), embed=embed)
                         await app.send_message(message.channel, "완료!")
