@@ -144,7 +144,12 @@ async def on_message(message):
                         embed.add_field(name=(message.author.name) + "님의 잠수 상태가 시작되었습니다!!!", value="잠수 시작 시간 : " + str(a) + "년 " + str(b) + "월 " + str(c) + "일 " + str(d) + "시 " + str(e) + "분")
                         embed.add_field(name="사유", value=learn)
                         await app.send_message(message.channel, embed=embed)
-        
+                if message.content.startswith('/패치노트'):
+                    embed = discord.Embed(title="더 나은 서비스를 위한 업그레이드", color=0x00ff00)
+                    embed.add_field(name="●잠수 기능 사유 추가", value="잠수 뒤에 사유를 추가해 사유를 넣을 수 있습니다.")
+                    embed.add_field(name="●패치노트 기능 추가", value="매 업데이트마다 변경된 내용을 확인할 수 있습니다.")
+                    await app.send_message(message.channel, embed=embed)
+
                 if "/" in message.content:
                     a = datetime.datetime.today().year
                     b = datetime.datetime.today().month
