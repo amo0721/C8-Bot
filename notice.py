@@ -72,7 +72,7 @@ async def on_message(message):
                     embed.add_field(name='`/온라인`', value='봇이 온라인인지 확인할 수 있습니다.', inline=False)
                     embed.add_field(name='`/도움말`', value='Jenon Bot 도움말을 출력합니다.', inline=False)
                     embed.add_field(name='`/초대`', value='Jenon Bot 초대링크를 출력하나, 이 봇은 서버 전용 봇으로 쓸모없는 커맨드((퍽퍽', inline=False)
-                    embed.add_field(name='`/규칙`', value="본 서버 규칙을 출력합니다.", inline=False)
+                    embed.add_field(name='`/패치노트`', value="봇의 최근 업데이트 내용을 출력합니다.", inline=False)
                     embed.add_field(name='`/서버정보`', value="서버 정보를 출력합니다.", inline=False)
                     embed.add_field(name='`/잠수 [사유]`', value="잠수 상태에 돌입합니다. 사유도 넣을 수 있습니다.", inline=False)
                     embed.add_field(name='`/관리자 소개`', value="OverWatch discord Server | 서버 관리자들을 소개합니다!!!")
@@ -148,6 +148,7 @@ async def on_message(message):
                     embed = discord.Embed(title="더 나은 서비스를 위한 업그레이드", color=0x00ff00)
                     embed.add_field(name="●잠수 기능 사유 추가", value="잠수 뒤에 사유를 추가해 사유를 넣을 수 있습니다.")
                     embed.add_field(name="●패치노트 기능 추가", value="매 업데이트마다 변경된 내용을 확인할 수 있습니다.")
+                    embed.add_field(name="●긴급수정:도움말 수정 및 서버 안정화 작업", value="20191111업데이트")
                     await app.send_message(message.channel, embed=embed)
 
                 if "/" in message.content:
