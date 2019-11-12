@@ -99,7 +99,7 @@ async def on_message(message):
 
                 if message.content.startswith('/종료'):
                     embed = discord.Embed(title="메인 모듈 종료", color=0xff0000)
-                    embed.add_field(name="메인 모듈 종료", value="요청자 : " + str(message.author.name))
+                    embed.add_field(name="The main module is change to offline.", value="요청자 : " + str(message.author.name))
                     await app.send_message(app.get_channel(Setting.err_loging_channel), embed=embed)
                     quit()
 
@@ -145,10 +145,9 @@ async def on_message(message):
                         embed.add_field(name="사유", value=learn)
                         await app.send_message(message.channel, embed=embed)
                 if message.content.startswith('/패치노트'):
-                    embed = discord.Embed(title="더 나은 서비스를 위한 업그레이드", color=0x00ff00)
-                    embed.add_field(name="●잠수 기능 사유 추가", value="잠수 뒤에 사유를 추가해 사유를 넣을 수 있습니다.")
-                    embed.add_field(name="●패치노트 기능 추가", value="매 업데이트마다 변경된 내용을 확인할 수 있습니다.")
-                    embed.add_field(name="●긴급수정:도움말 수정 및 서버 안정화 작업", value="20191111업데이트")
+                    embed = discord.Embed(title="업데이트 내역", color=00ff00)
+                    embed.add_field(name="●일부 번역 작업", value="일부 구간에서 한국어를 영어로 번역하였습니다.")
+                    embed.add_field(nane="●긴급수정:서버 안정화 작업", value="20191113 Update")
                     await app.send_message(message.channel, embed=embed)
 
                 if "/" in message.content:
