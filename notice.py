@@ -147,7 +147,7 @@ async def on_message(message):
                 if message.content.startswith('/패치노트'):
                     embed = discord.Embed(title="업데이트 내역", color=0x00ff00)
                     embed.add_field(name="●일부 번역 작업", value="일부 구간에서 한국어를 영어로 번역하였습니다.")
-                    embed.add_field(nane="●긴급수정:서버 안정화 작업", value="20191113 Update")
+                    embed.add_field(name="●긴급수정:서버 안정화 작업", value="20191113 Update")
                     await app.send_message(message.channel, embed=embed)
 
                 if "/" in message.content:
