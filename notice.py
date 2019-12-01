@@ -50,8 +50,8 @@ async def on_message(message):
                 
                 if message.content.startswith("/초대"):
                     embed = discord.Embed(title="Invite link", description="Jenon Bot 초대 링크\n초대 시에 초대를 원하는 서버에 관리자 권한을 요구로 하니, 서버장에게 요구해 Adminstor 권한을 부여받으시길 바랍니다.", color=0x00ff00
-                    embed.add_field(name="Invite Link", value="https://discordapp.com/api/oauth2/authorize?client_id=642538846428594206&permissions=8&scope=bot")
-                    embed.add_field(name="Support Server", value="https://discord.gg/wBmzN5B")
+                    embed.add_field(name="https://discordapp.com/api/oauth2/authorize?client_id=642538846428594206&permissions=8&scope=bot", value="Invite Link")
+                    embed.add_field(name="https://discord.gg/wBmzN5B", value="Support Server")
                                           
                 if message.content.startswith("/상태"):
                     if message.author.id == Setting.owner_id:
