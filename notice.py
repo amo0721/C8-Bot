@@ -47,12 +47,6 @@ async def on_message(message):
                     embed.add_field(name="I'm online!", value="이 메세지가 발신되지 않으면 Offline 입니다.")
                     embed.add_field(name="요청자", value="<@" + str(message.author.name) + ">")
                     await app.send_message(message.channel, embed=embed)  
-                
-                if message.content.startswith("/초대"):
-                    embed=discord.Embed(title="Invite link", description="Jenon Bot 초대 링크\n초대 시에 초대를 원하는 서버에 관리자 권한을 요구로 하니, 서버장에게 요구해 Adminstor 권한을 부여받으시길 바랍니다.", color=0x00ff00
-                    embed.add_field(name="https://discordapp.com/api/oauth2/authorize?client_id=642538846428594206&permissions=8&scope=bot", value="Invite Link")
-                    embed.add_field(name="https://discord.gg/wBmzN5B", value="Support Server")
-                    await app.send_message(message.channel, embed=embed)
                                           
                 if message.content.startswith("/상태"):
                     if message.author.id == Setting.owner_id:
@@ -74,7 +68,6 @@ async def on_message(message):
                     embed=discord.Embed(title='`Jenon Bot 도움말 목록`', description=None, color=0xb2ebf4)
                     embed.add_field(name='`/온라인`', value='봇이 온라인인지 확인할 수 있습니다.', inline=False)
                     embed.add_field(name='`/도움말`', value='Jenon Bot 도움말을 출력합니다.', inline=False)
-                    embed.add_field(name='`/초대`', value='Jenon Bot 초대링크와 함께 지원서버의 초대 링크를 출력합니다.', inline=False)
                     embed.add_field(name='`/패치노트`', value="봇의 최근 업데이트 내용을 출력합니다.", inline=False)
                     embed.add_field(name='`/서버정보`', value="서버 정보를 출력합니다.", inline=False)
                     embed.add_field(name='`/잠수 [사유]`', value="잠수 상태에 돌입합니다. 사유도 넣을 수 있습니다.", inline=False)
