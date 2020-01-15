@@ -7,6 +7,7 @@ afk = []
 @app.event
 async def on_ready():
     print("login" % ())
+    await app.change_presence(game=discord.Game(name="Ver.1.3.4", type=1))
     
 @app.event
 async def on_member_join(member):
