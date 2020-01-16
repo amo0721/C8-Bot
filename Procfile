@@ -1,1 +1,1 @@
-worker: python notice.py
+worker: python main_core.py
